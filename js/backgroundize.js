@@ -1,8 +1,8 @@
 // 在手机端显示的背景图片链接
-const mobileBgImageUrl = "url('D:\Blog\mengfei826\source\images\【哲风壁纸】傲娇猫咪-宠物壁纸元素.png')";
+const mobileBgImageUrl = "url('source\images\【哲风壁纸】傲娇猫咪-宠物壁纸元素.png')";
 
 // 在电脑端显示的背景图片链接
-const desktopBgImageUrl = "url('D:\Blog\mengfei826\source\images\【哲风壁纸】傍晚路灯-山脉-水面.png')";
+const desktopBgImageUrl = "url('source\images\【哲风壁纸】傍晚路灯-山脉-水面.png')";
 
 // 在手机端设置背景图片
 if (window.innerWidth < 768) {
