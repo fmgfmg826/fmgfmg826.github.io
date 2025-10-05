@@ -5,8 +5,8 @@
   
   <entry>
     <title>测试文章</title>
-    <link href="/2025/10/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
-    <url>/2025/10/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <link href="/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0.html"/>
+    <url>/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0.html</url>
     
     <content type="html"><![CDATA[<p>测试分类和标签</p>]]></content>
     
@@ -30,8 +30,8 @@
   
   <entry>
     <title>记录我的个人博客诞生</title>
-    <link href="/2025/10/04/%E8%AE%B0%E5%BD%95%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F/"/>
-    <url>/2025/10/04/%E8%AE%B0%E5%BD%95%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F/</url>
+    <link href="/%E8%AE%B0%E5%BD%95%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F.html"/>
+    <url>/%E8%AE%B0%E5%BD%95%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F.html</url>
     
     <content type="html"><![CDATA[<p>从浏览器搜索强化学习的相关知识，无意间看到了这个博主的bolg <a href="https://hwcoder.top/">https://hwcoder.top/</a> 后 我想搭建一个属于自己博客的强烈意愿达到了顶峰。<br>笔记本更换固态硬盘，重装完系统，就着手开始准备了，先从阿里云买了个人的域名 mengfei.top，从网上开始搜索相关教程，但是教程是多且杂，大多对非计算机专业的学生来说有点困难，回忆下我个人搭建的历程：<br>1.安装nodejs<br>2.安装hexo<br>3.安装git<br>4.注册github<br>5.创建github仓库（一定要与用户名一致的 用户名.github.io 。。因为我就创建错了浪费了好多时间）<br>6.安装vscode加上配置mingw64<br>7.本地与github关联<br>8.创建公钥<br>9.配置阿里云域名解析<br>10.配置阿里云DNS<br>11.更换DNS托管到cloudflare<br>12.初始化hexo文件夹<br>13.发布hexo到github<br>14.等等后续再写</p>]]></content>
     
@@ -43,8 +43,8 @@
   
   <entry>
     <title>我的第一篇文章</title>
-    <link href="/2025/10/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-    <url>/2025/10/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+    <link href="/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0.html"/>
+    <url>/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0.html</url>
     
     <content type="html"><![CDATA[<p>笔记本从原装win11家庭版本升级到专业版本<br>断网 设置 系统 激活 升级 输入专业版激活码，电脑重启<br>设置 系统 显示未激活，联网 win＋r输入powershell 打开<br>输入irm <a href="https://get.activated.win/">https://get.activated.win</a> | iex 然后输入1</p><p>win11专业版激活成功！</p>]]></content>
     
@@ -56,8 +56,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="/2025/10/04/hello-world/"/>
-    <url>/2025/10/04/hello-world/</url>
+    <link href="/hello-world.html"/>
+    <url>/hello-world.html</url>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     

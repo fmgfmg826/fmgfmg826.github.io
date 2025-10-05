@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://mengfei826.top/about/index.html</loc>
+    <loc>http://mengfei826.top/about/</loc>
     
     <lastmod>2025-10-04</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://mengfei826.top/categories/index.html</loc>
+    <loc>http://mengfei826.top/categories/</loc>
     
     <lastmod>2025-10-04</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://mengfei826.top/tags/index.html</loc>
+    <loc>http://mengfei826.top/tags/</loc>
     
     <lastmod>2025-10-04</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://mengfei826.top/2025/10/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</loc>
+    <loc>http://mengfei826.top/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0</loc>
     
     <lastmod>2025-10-04</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://mengfei826.top/2025/10/04/%E8%AE%B0%E5%BD%95%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F/</loc>
+    <loc>http://mengfei826.top/%E8%AE%B0%E5%BD%95%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F</loc>
     
     <lastmod>2025-10-04</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://mengfei826.top/2025/10/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</loc>
+    <loc>http://mengfei826.top/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0</loc>
     
     <lastmod>2025-10-04</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://mengfei826.top/2025/10/04/hello-world/</loc>
+    <loc>http://mengfei826.top/hello-world</loc>
     
     <lastmod>2025-10-03</lastmod>
     
@@ -67,7 +67,7 @@
 
   <url>
     <loc>http://mengfei826.top/</loc>
-    <lastmod>2025-10-04</lastmod>
+    <lastmod>2025-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,7 +75,7 @@
   
   <url>
     <loc>http://mengfei826.top/tags/%E8%AF%95%E9%AA%8C/</loc>
-    <lastmod>2025-10-04</lastmod>
+    <lastmod>2025-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -84,7 +84,7 @@
   
   <url>
     <loc>http://mengfei826.top/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/</loc>
-    <lastmod>2025-10-04</lastmod>
+    <lastmod>2025-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
