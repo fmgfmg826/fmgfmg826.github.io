@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>机器学习全景笔记：从线性回归到强化学习</title>
+    <link href="/%E5%90%B4%E6%81%A9%E8%BE%BE%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95.html"/>
+    <url>/%E5%90%B4%E6%81%A9%E8%BE%BE%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95.html</url>
+    
+    <content type="html"><![CDATA[<p>本文是基于吴恩达 Machine Learning Specialization 课程的深度学习笔记。内容涵盖监督学习（回归与分类）、神经网络与深度学习、以及无监督学习与强化学习的核心概念与工程实践。</p><h2 id="第一部分监督学习-supervised-learning">第一部分：监督学习 (Supervised Learning)</h2><p>监督学习的核心是通过输入 <span class="math inline"><em>x</em></span> 和对应的正确输出 <span class="math inline"><em>y</em></span>，训练算法来预测未知数据的输出。</p><h3 id="核心算法分类">1. 核心算法分类</h3><ul><li><strong>回归 (Regression)</strong>：预测连续的数值输出。<ul><li><em>经典案例</em>：根据面积预测房价。</li><li><em>算法</em>：线性回归 (Linear Regression)。</li></ul></li><li><strong>分类 (Classification)</strong>：预测离散的类别标签。<ul><li><em>经典案例</em>：乳腺癌检测（良性/恶性）、垃圾邮件分类。</li><li><em>算法</em>：逻辑回归 (Logistic Regression)。</li></ul></li></ul><h3 id="线性回归-linear-regression">2. 线性回归 (Linear Regression)</h3><ul><li><strong>模型</strong>：<code>f(x) = w * x + b</code></li><li><strong>代价函数 (Cost Function)</strong>：均方误差 (MSE)，用于衡量预测值与真实值的差距。形象化理解为一个“碗”形曲面。<ul><li>目标：找到 <code>w, b</code> 使得 <code>J(w,b)</code> 最小。</li></ul></li><li><strong>梯度下降 (Gradient Descent)</strong>：<ul><li>一种迭代优化算法，沿着代价函数下降最快的方向更新参数。</li><li><strong>关键点</strong>：<code>w</code> 和 <code>b</code> 必须<strong>同步更新 (simultaneous update)</strong>。</li><li><strong>学习率 (Alpha)</strong>：控制步长。过小导致收敛慢，过大可能导致发散。</li></ul></li></ul><h3 id="实用技巧">3. 实用技巧</h3><ul><li><strong>向量化 (Vectorization)</strong>：利用 NumPy 进行矩阵运算，代替显式的 For 循环，大幅利用并行计算提升速度。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 向量化实现</span><br>f = np.dot(w, x) + b<br></code></pre></td></tr></table></figure></li><li><strong>特征缩放 (Feature Scaling)</strong>：<ul><li><em>问题</em>：如果特征范围差异大（如房价 vs 房间数），代价函数的等高线呈椭圆，导致梯度下降路径曲折。</li><li><em>解法</em>：使用 Z-score 标准化或均值归一化，使特征范围相近（如 -1 到 1），加速收敛。</li></ul></li></ul><h3 id="逻辑回归-logistic-regression">4. 逻辑回归 (Logistic Regression)</h3><p>虽然名字叫“回归”，但它是<strong>二分类</strong>算法。</p><ul><li><strong>Sigmoid 函数</strong>：将输出压缩到 (0, 1) 之间，表示概率。<ul><li>公式：<code>g(z) = 1 / (1 + e^(-z))</code></li></ul></li><li><strong>决策边界 (Decision Boundary)</strong>：如 <code>g(z) &gt;= 0.5</code> 预测为 1，否则为 0。</li><li><strong>损失函数</strong>：不能用均方误差（因为是非凸函数），需使用对数损失 (Log Loss)。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 逻辑回归代价函数核心逻辑</span><br>loss = -y * np.log(f_wb) - (<span class="hljs-number">1</span> - y) * np.log(<span class="hljs-number">1</span> - f_wb)<br></code></pre></td></tr></table></figure></li></ul><h3 id="过拟合与正则化-regularization">5. 过拟合与正则化 (Regularization)</h3><ul><li><strong>过拟合 (Overfitting/High Variance)</strong>：模型在训练集表现极好，但在新数据上表现差（泛化能力弱）。</li><li><strong>欠拟合 (Underfitting/High Bias)</strong>：模型太简单，无法捕捉数据规律。</li><li><strong>解决方案</strong>：<ol type="1"><li>增加训练数据。</li><li>特征选择（减少特征数量）。</li><li><strong>正则化</strong>：在代价函数中引入惩罚项 <code>lambda</code>。<ul><li><strong>Lambda (<span class="math inline"><em>λ</em></span>) 的影响</strong>：<ul><li><span class="math inline"><em>λ</em></span> 过大 -&gt; 欠拟合（参数被压缩接近 0）。</li><li><span class="math inline"><em>λ</em></span> 过小 -&gt; 过拟合（几乎无约束）。</li></ul></li></ul></li></ol></li></ul><hr><h2 id="第二部分深度学习-deep-learning">第二部分：深度学习 (Deep Learning)</h2><h3 id="神经网络基础">1. 神经网络基础</h3><ul><li><strong>结构</strong>：输入层 -&gt; 隐藏层 (Hidden Layers) -&gt; 输出层。</li><li><strong>本质</strong>：每一层神经元可以看作是一个逻辑回归单元，通过组合学习更复杂的特征。</li><li><strong>前向传播 (Forward Propagation)</strong>：数据从输入层流向输出层的过程。</li><li><strong>实现细节</strong>：<ul><li>使用矩阵乘法高效计算：<code>Z = np.matmul(A_in, W) + B</code>。</li><li>TensorFlow/Keras 是主流框架。</li></ul></li></ul><h3 id="激活函数-activation-functions">2. 激活函数 (Activation Functions)</h3><ul><li><strong>Hidden Layer 选择</strong>：<ul><li><strong>ReLU</strong> (<code>g(z) = max(0, z)</code>)：最常用，计算快，且在正区间无梯度消失问题。</li></ul></li><li><strong>Output Layer 选择</strong>：<ul><li>二分类问题：<strong>Sigmoid</strong>。</li><li>多分类问题：<strong>Softmax</strong>。</li><li>回归问题（正数）：<strong>ReLU</strong>。</li><li>回归问题（任意值）：<strong>Linear</strong>。</li></ul></li></ul><h3 id="多分类与-softmax">3. 多分类与 Softmax</h3><ul><li><strong>Softmax</strong>：输出属于每个类别的概率，且概率之和为 1。</li><li><strong>数值稳定性优化</strong>：在 TensorFlow 中，推荐使用 <code>from_logits=True</code>。这会让计算包含在损失函数内部，避免浮点数精度溢出问题。</li></ul><h3 id="机器学习项目诊断-diagnostics">4. 机器学习项目诊断 (Diagnostics)</h3><p>如何改进模型？不要盲目尝试，要看指标。</p><ul><li><strong>数据集划分</strong>：<ul><li>Training Set (60%)：训练参数。</li><li>Cross Validation Set (20%)：<strong>调参</strong>（选择模型架构、多项式次数、正则化系数），计算 <span class="math inline"><em>J</em><sub><em>c</em><em>v</em></sub></span>。</li><li>Test Set (20%)：评估最终模型的泛化能力。</li></ul></li><li><strong>偏差 vs 方差 (Bias vs Variance)</strong>：<ul><li><span class="math inline"><em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub></span> 高，<span class="math inline"><em>J</em><sub><em>c</em><em>v</em></sub></span> 高 -&gt; <strong>高偏差 (欠拟合)</strong> -&gt; 对策：增加网络复杂度、减少正则化、增加特征。</li><li><span class="math inline"><em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub></span> 低，<span class="math inline"><em>J</em><sub><em>c</em><em>v</em></sub></span> 高 -&gt; <strong>高方差 (过拟合)</strong> -&gt; 对策：增加数据、增大正则化、减小网络规模。</li></ul></li><li><strong>误差分析</strong>：人工检查模型出错的样本，寻找规律（如拼写错误、特定背景噪音）。</li></ul><h3 id="决策树与集成学习-tree-ensembles">5. 决策树与集成学习 (Tree Ensembles)</h3><ul><li><strong>基本概念</strong>：<ul><li>通过<strong>信息增益 (Information Gain)</strong> 选择分裂特征，核心是使得分裂后的子节点<strong>纯度 (Purity)</strong> 变高（熵 Entropy 降低）。</li><li><strong>独热编码 (One-hot Encoding)</strong>：处理无序的分类特征。</li></ul></li><li><strong>高级模型</strong>：<ul><li><strong>随机森林 (Random Forest)</strong>：多棵树并行投票，通过“有放回采样”和“特征随机子集”增强健壮性。</li><li><strong>XGBoost</strong>：目前竞赛最强模型之一。基于 Boosting 思想，后续的树专门修正前序树预测错误的样本。内置正则化，效率极高。</li></ul></li><li><strong>选型建议</strong>：<ul><li><strong>表格数据 (Tabular Data)</strong>：首选 XGBoost/决策树。</li><li><strong>非结构化数据 (图像/音频/文本)</strong>：首选神经网络。</li></ul></li></ul><hr><h2 id="第三部分无监督学习与强化学习">第三部分：无监督学习与强化学习</h2><h3 id="聚类-clustering">1. 聚类 (Clustering)</h3><ul><li><strong>K-Means 算法</strong>：<ol type="1"><li>随机初始化 K 个质心。</li><li><strong>分配</strong>：将每个样本分配给最近的质心。</li><li><strong>移动</strong>：重新计算每个簇的平均值作为新质心。</li><li>重复直到收敛。</li></ol></li><li><strong>肘部法则 (Elbow Method)</strong>：通过绘制代价函数随 K 变化的曲线，选择“手肘”点作为最佳聚类数。</li></ul><h3 id="异常检测-anomaly-detection">2. 异常检测 (Anomaly Detection)</h3><ul><li><strong>场景</strong>：欺诈检测、工业质检。特点是正样本（异常）极少。</li><li><strong>方法</strong>：使用高斯分布 (Gaussian Distribution) 建模。如果某个样本的概率 <code>p(x) &lt; epsilon</code>，则判定为异常。</li></ul><h3 id="推荐系统-recommender-systems">3. 推荐系统 (Recommender Systems)</h3><ul><li><strong>协同过滤 (Collaborative Filtering)</strong>：<ul><li>利用用户对物品的打分矩阵。算法同时学习“用户偏好特征”和“物品特征”。</li><li><strong>均值归一化</strong>：解决新用户没有评分数据的问题。</li></ul></li><li><strong>基于内容的过滤</strong>：利用物品本身的属性（如电影流派、演员）进行推荐。</li><li><strong>PCA (主成分分析)</strong>：用于降维和数据可视化，保留数据方差最大的方向。</li></ul><h3 id="强化学习-reinforcement-learning">4. 强化学习 (Reinforcement Learning)</h3><p>核心是通过与环境交互，学习最大化<strong>长期回报 (Return)</strong> 的策略。</p><ul><li><strong>关键要素</strong>：<ul><li>State (状态 <span class="math inline"><em>s</em></span>), Action (动作 <span class="math inline"><em>a</em></span>), Reward (奖励 <span class="math inline"><em>r</em></span>), Discount factor (折扣因子 <span class="math inline"><em>γ</em></span>)。</li></ul></li><li><strong>马尔可夫决策过程 (MDP)</strong>：未来只取决于当前状态，与过去无关。</li><li><strong>贝尔曼方程 (Bellman Equation)</strong>： <code>Q(s, a) = R(s) + gamma * max(Q(s', a'))</code><ul><li>当前的价值 = 即时奖励 + 折扣后的未来最大价值。</li></ul></li><li><strong>DQN (Deep Q-Network)</strong>：<ul><li>使用神经网络拟合 Q 函数：输入状态 <span class="math inline"><em>s</em></span>，输出所有动作的 Q 值。</li><li><strong>Epsilon-Greedy 策略</strong>：<ul><li>以 <span class="math inline">1 − <em>ϵ</em></span> 的概率选最优动作 (Exploitation)。</li><li>以 <span class="math inline"><em>ϵ</em></span> 的概率随机探索 (Exploration)。</li></ul></li><li><strong>经验回放 (Replay Buffer)</strong>：存储 <code>(s, a, r, s')</code> 元组，随机采样训练，打破数据相关性，使训练更稳定。</li></ul></li></ul><hr><blockquote><p><strong>总结</strong>： 机器学习不仅是数学推导，更是工程实践。从选择模型、数据清洗、特征工程到误差分析，构成了一个完整的迭代闭环。</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI学习之路</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Machine Learning</tag>
+      
+      <tag>Deep Learning</tag>
+      
+      <tag>Python</tag>
+      
+      <tag>Notes</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>测试文章</title>
+    <link href="/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0.html"/>
+    <url>/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0.html</url>
+    
+    <content type="html"><![CDATA[<p>测试分类和标签</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>测试分类</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>试验</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/hello-world.html"/>
+    <url>/hello-world.html</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start">Quick Start</h2><h3 id="create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
