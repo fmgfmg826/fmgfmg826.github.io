@@ -35,31 +35,6 @@
   
   
   <entry>
-    <title>测试文章</title>
-    <link href="/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0.html"/>
-    <url>/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0.html</url>
-    
-    <content type="html"><![CDATA[<p>测试分类和标签</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>测试分类</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>试验</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Hello World</title>
     <link href="/hello-world.html"/>
     <url>/hello-world.html</url>
